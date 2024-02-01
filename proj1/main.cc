@@ -34,6 +34,10 @@ int main(int argc, char* argv[]) {
     while (int i = asOperators(arguments)) {
       asOperate(arguments, i);
     }
+    if (arguments.size() != 1) {
+      cout << "Improper input" << endl;
+      return 1;
+    }
     // Print out the answer
     for (int i = 0; i < arguments.size(); ++i) {
       cout << arguments[i] << endl;
