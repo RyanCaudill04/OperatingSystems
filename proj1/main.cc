@@ -20,9 +20,8 @@ int main(int argc, char* argv[]) {
     // Create vector and assign all arguments other than
     // executable to the vector
     std::vector<string> arguments;
-    string temp;
     for (int i = 1; i < argc; ++i) {
-      arguments.push_back(temp.assign(argv[i]));
+      arguments.push_back(argv[i]);
     }
     // Iterate through vector until all multiplication
     // and division is done
@@ -34,13 +33,12 @@ int main(int argc, char* argv[]) {
     while (int i = asOperators(arguments)) {
       asOperate(arguments, i);
     }
+    // Make sure correct syntax was used at command line
     if (arguments.size() != 1) {
       cout << "Improper input" << endl;
       return 1;
     }
     // Print out the answer
-    for (int i = 0; i < arguments.size(); ++i) {
-      cout << arguments[i] << endl;
-    }
+    cout << arguments[0] << endl;
     return 0;
 }
