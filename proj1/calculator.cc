@@ -24,10 +24,6 @@ int asOperators(std::vector<string> &args) {
   return 0;
 }
 
-void convertToCharArr(double number, char* buffer) {
-  std::snprintf(buffer, sizeof(buffer), "%.10f", number);
-}
-
 void mdOperate(std::vector<string> &args, int index) {
   double value;
   char op = args[index][0];
@@ -37,9 +33,7 @@ void mdOperate(std::vector<string> &args, int index) {
     value = stod(args[index-1]) * stod(args[index+1]);
   }
   std::string temp = std::to_string(value);
-  char buffer[20];
-  convertToCharArr(value, buffer);
-  args[index] = buffer;
+  args[index] = temp;
   args.erase(args.begin() + index + 1);
   args.erase(args.begin() + index - 1);
 }
@@ -53,9 +47,7 @@ void asOperate(std::vector<string> &args, int index) {
     value = stod(args[index-1]) + stod(args[index+1]);
   }
   std::string temp = std::to_string(value);
-  char buffer[20];
-  convertToCharArr(value, buffer);
-  args[index] = buffer;
+  args[index] = temp;
   args.erase(args.begin() + index + 1);
   args.erase(args.begin() + index - 1);
 }

@@ -19,8 +19,6 @@ int mdOperators(std::vector<string> &args);
 // the index of the first multiplication or division
 // operator. Returns 0 if none are found
 int asOperators(std::vector<string> &args);
-// Helper function to convert any number into a char*
-void convertToCharArr(double number, char* buffer);
 // Operates on mult/div operator. Sets the operator to
 // the result of the operation between the numbers before
 // and after the operator and then removes those two from
