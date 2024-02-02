@@ -14,11 +14,11 @@ using std::stod;
 // Function that parses through the vector and returns
 // the index of the first multiplication or division
 // operator. Returns 0 if none are found
-int mult_div_index(std::vector<string> &args);
+int mult_div_index(std::vector<string> args);
 // Function that parses through the vector and returns
 // the index of the first multiplication or division
 // operator. Returns 0 if none are found
-int add_sub_index(std::vector<string> &args);
+int add_sub_index(std::vector<string> args);
 // Operates on mult/div operator. Sets the operator to
 // the result of the operation between the numbers before
 // and after the operator and then removes those two from

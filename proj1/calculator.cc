@@ -10,14 +10,14 @@ using std::cout;
 using std::endl;
 using std::stod;
 
-int mult_div_index(std::vector<string> &args) {
+int mult_div_index(std::vector<string> args) {
   for (int i = 1; i < args.size(); i = i + 2) {
     if (args[i][0] == '/' || args[i][0] == 'x') return i;
   }
   return 0;
 }
 
-int add_sub_index(std::vector<string> &args) {
+int add_sub_index(std::vector<string> args) {
   for (int i = 1; i < args.size(); i = i + 2) {
     if (args[i][0] == '+' || args[i][0] == '-') return i;
   }

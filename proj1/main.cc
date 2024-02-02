@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
     }
     // Make sure correct syntax was used at command line
     if (arguments.size() != 1) {
-      cout << "Improper input" << endl;
+      cout << "Mutation failed" << endl;
       return 1;
     }
     // Print out the answer
