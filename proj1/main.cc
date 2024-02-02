@@ -21,17 +21,17 @@ int main(int argc, char* argv[]) {
     // executable to the vector
     std::vector<string> arguments;
     for (int i = 1; i < argc; ++i) {
-      arguments.push_back(argv[i]);
+      arguments.emplace_back(argv[i]);
     }
     // Iterate through vector until all multiplication
     // and division is done
-    while (int i = mdOperators(arguments)) {
-      mdOperate(arguments, i);
+    while (int i = mult_div_index(arguments)) {
+      mult_div_operate(arguments, i);
     }
     // Iterate through vector until all addition
     // and subtraction is done
-    while (int i = asOperators(arguments)) {
-      asOperate(arguments, i);
+    while (int i = add_sub_index(arguments)) {
+      add_sub_operate(arguments, i);
     }
     // Make sure correct syntax was used at command line
     if (arguments.size() != 1) {

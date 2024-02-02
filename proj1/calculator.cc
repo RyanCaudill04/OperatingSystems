@@ -10,21 +10,21 @@ using std::cout;
 using std::endl;
 using std::stod;
 
-int mdOperators(std::vector<string> &args) {
+int mult_div_index(std::vector<string> &args) {
   for (int i = 1; i < args.size(); i = i + 2) {
     if (args[i][0] == '/' || args[i][0] == 'x') return i;
   }
   return 0;
 }
 
-int asOperators(std::vector<string> &args) {
+int add_sub_index(std::vector<string> &args) {
   for (int i = 1; i < args.size(); i = i + 2) {
     if (args[i][0] == '+' || args[i][0] == '-') return i;
   }
   return 0;
 }
 
-void mdOperate(std::vector<string> &args, int index) {
+void mult_div_operate(std::vector<string> &args, int index) {
   double value;
   char op = args[index][0];
   if (op == '/') {
@@ -38,7 +38,7 @@ void mdOperate(std::vector<string> &args, int index) {
   args.erase(args.begin() + index - 1);
 }
 
-void asOperate(std::vector<string> &args, int index) {
+void add_sub_operate(std::vector<string> &args, int index) {
   double value;
   char op = args[index][0];
   if (op == '-') {
